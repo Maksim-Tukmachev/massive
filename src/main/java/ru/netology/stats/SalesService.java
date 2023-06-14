@@ -11,12 +11,11 @@ public class SalesService {
     }
 
     public int middleSum( int[] arr ){
+
+        SalesService service = new SalesService();
         int length = arr.length;
-        int middleSum = 0;
-        for ( int i = 0; i<length; i++){
-            middleSum += arr[i];
-        }
-        return middleSum/length;
+        int sum= service.sum(arr);
+        return sum/length;
     }
 
     public int maxSales(int[] arr) {
@@ -44,12 +43,9 @@ public class SalesService {
     }
 
     public int lowerMiddleSum(int[] arr){
+        SalesService service = new SalesService();
+        int middleSum= service.middleSum(arr);
         int length = arr.length;
-        int middleSum = 0;
-        for ( int i = 0; i<length; i++){
-            middleSum += arr[i];
-        }
-        middleSum=  middleSum / length;
         int minThanMiddle = 0;
         for ( int i = 0; i<length; i++){
             if(arr[i]< middleSum){
@@ -60,12 +56,9 @@ public class SalesService {
     }
 
     public int upperMiddleSum(int[] arr){
+        SalesService service = new SalesService();
+        int middleSum= service.middleSum(arr);
         int length = arr.length;
-        int middleSum = 0;
-        for ( int i = 0; i<length; i++){
-            middleSum += arr[i];
-        }
-        middleSum=  middleSum / length;
         int moreThanMiddle = 0;
         for ( int i = 0; i<length; i++){
             if(arr[i]> middleSum){

@@ -1,19 +1,21 @@
 package ru.netology.stats;
 
 public class SalesService {
-    public int sum( int[] arr ){
+    public int sum(int[] arr) {
         int length = arr.length;
         int sum = 0;
-        for ( int i = 0; i<length; i++){
+        for (int i = 0; i < length; i++) {
             sum += arr[i];
         }
         return sum;
     }
 
-    public int middleSum( int[] arr ){
+    public int middleSum(int[] arr) {
+
+        SalesService service = new SalesService();
         int length = arr.length;
-        int sum= sum(arr);
-        return sum/length;
+        int sum = service.sum(arr);
+        return sum / length;
     }
 
     public int maxSales(int[] arr) {
@@ -40,24 +42,26 @@ public class SalesService {
         return minMonth + 1; // месяца нумеруются с 1, а индексы массива с 0, нужно сдвинуть ответ на 1
     }
 
-    public int lowerMiddleSum(int[] arr){
-        int middleSum = middleSum(arr);
+    public int lowerMiddleSum(int[] arr) {
+        SalesService service = new SalesService();
+        int middleSum = service.middleSum(arr);
         int length = arr.length;
         int minThanMiddle = 0;
-        for ( int i = 0; i<length; i++){
-            if(arr[i]< middleSum){
+        for (int i = 0; i < length; i++) {
+            if (arr[i] < middleSum) {
                 minThanMiddle++;
             }
         }
         return minThanMiddle;
     }
 
-    public int upperMiddleSum(int[] arr){
-        int middleSum = middleSum(arr);
+    public int upperMiddleSum(int[] arr) {
+        SalesService service = new SalesService();
+        int middleSum = service.middleSum(arr);
         int length = arr.length;
         int moreThanMiddle = 0;
-        for ( int i = 0; i<length; i++){
-            if(arr[i]> middleSum){
+        for (int i = 0; i < length; i++) {
+            if (arr[i] > middleSum) {
                 moreThanMiddle++;
             }
         }
